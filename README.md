@@ -10,3 +10,10 @@
 
 ## What is Exercise Reminder?
 Exercise reminder is a desktop application to remind you to make exercise after sitting for a lot of time in front of your computer.
+
+## Platforms
+- Cross platform.
+
+## Dependencies
+- Easy Window.
+- SFML.

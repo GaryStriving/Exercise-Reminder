@@ -1,3 +1,4 @@
+#include "../include/Utils.hpp"
 #include <SFML/Graphics.hpp>
 #include <ctime>
 
@@ -6,9 +7,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(sf::VideoMode::getDesktopMode().width,sf::VideoMode::getDesktopMode().height), "Let's do exercise!", sf::Style::None);
     int resting_time = 600;
     std::time_t last_time = std::time(0);
-    sf::Texture texture;
-    if(!texture.loadFromFile("./assets/exercise.jpg"))
-        throw;
+    sf::Texture texture = loadFromFileWithFallbacks<sf::Texture>("exercise.jpg",{"assets/","","C:/Users/Administrator/Desktop/Exercise-Reminder/assets/"});
     sf::Sprite sprite(texture);
     sprite.setScale(sf::VideoMode::getDesktopMode().width/sprite.getGlobalBounds().width,sf::VideoMode::getDesktopMode().height/sprite.getGlobalBounds().height);
     while(window.isOpen())
